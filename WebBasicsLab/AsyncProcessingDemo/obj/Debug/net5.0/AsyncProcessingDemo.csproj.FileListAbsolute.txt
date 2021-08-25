@@ -1,0 +1,15 @@
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\bin\Debug\net5.0\AsyncProcessingDemo.exe
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\bin\Debug\net5.0\AsyncProcessingDemo.deps.json
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\bin\Debug\net5.0\AsyncProcessingDemo.runtimeconfig.json
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\bin\Debug\net5.0\AsyncProcessingDemo.runtimeconfig.dev.json
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\bin\Debug\net5.0\AsyncProcessingDemo.dll
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\bin\Debug\net5.0\ref\AsyncProcessingDemo.dll
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\bin\Debug\net5.0\AsyncProcessingDemo.pdb
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\AsyncProcessingDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\AsyncProcessingDemo.AssemblyInfoInputs.cache
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\AsyncProcessingDemo.AssemblyInfo.cs
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\AsyncProcessingDemo.csproj.CoreCompileInputs.cache
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\AsyncProcessingDemo.dll
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\ref\AsyncProcessingDemo.dll
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\AsyncProcessingDemo.pdb
+C:\Users\Petar Kobakov\Desktop\C# Web\WebBasicsLab\AsyncProcessingDemo\obj\Debug\net5.0\AsyncProcessingDemo.genruntimeconfig.cache
