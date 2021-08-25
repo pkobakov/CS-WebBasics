@@ -40,7 +40,6 @@ namespace HTTPClientDemo
                 string requestString = Encoding.UTF8.GetString(buffer, 0, buffer.Length);
                 Console.WriteLine(requestString);
 
-                Thread.Sleep(5000);
 
                 string html = $"<a>Hello from PepiServer {DateTime.Now}</a>" +
                     $"<form method=post><input name=username /><input name=password />" +
@@ -49,6 +48,8 @@ namespace HTTPClientDemo
                 string response = "HTTP/1.1 200 OK" + Newline +
                     "Server: PepiServer 2021" + Newline +
                     //"Location: https://www.aninamontanari.com" + Newline +
+                    "Set-Cookie: sid=myFirstCookie" + Newline +
+                     "Set-Cookie: sid2=mySecondCookie" + Newline +
                     "Content-Type: text/html; charset= utf-8" + Newline +
                     "Content-Length:" + html + Newline +
                     Newline + html + Newline;
