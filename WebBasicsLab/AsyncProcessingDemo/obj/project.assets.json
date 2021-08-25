@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\WebBasicsLab\\AsyncProcessingDemo\\AsyncProcessingDemo.csproj",
+      "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\WebBasicsLab\\AsyncProcessingDemo\\AsyncProcessingDemo.csproj",
       "projectName": "AsyncProcessingDemo",
-      "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\WebBasicsLab\\AsyncProcessingDemo\\AsyncProcessingDemo.csproj",
+      "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\WebBasicsLab\\AsyncProcessingDemo\\AsyncProcessingDemo.csproj",
       "packagesPath": "C:\\Users\\Petar Kobakov\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\WebBasicsLab\\AsyncProcessingDemo\\obj\\",
+      "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\WebBasicsLab\\AsyncProcessingDemo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Petar Kobakov\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nAkje0cF9Zl8+dP7dS9h7mT/UbITgWLUUcYFL4jSNDInSggcaZ2NFWjmFMuvABvwKFPDVakkJku6qBFpG/hUgw==",
+  "dgSpecHash": "zKtTiqYUxFJ2Y5Uxm//jHaF58xXP67/A0IuW8NoX0lNR9R1t38NyhHIu38w/yQ8Zt3uvo+ZqyPz6RvYjK2ddTQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\WebBasicsLab\\AsyncProcessingDemo\\AsyncProcessingDemo.csproj",
+  "projectFilePath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\WebBasicsLab\\AsyncProcessingDemo\\AsyncProcessingDemo.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

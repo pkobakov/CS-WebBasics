@@ -16,7 +16,7 @@ namespace PrimeNumbersCounter
         static void Main(string[] args)
         {
             Stopwatch sw = Stopwatch.StartNew();
-            PrintPrimeCount(1, 1_000_000);
+            PrintPrimeCount(1, 10_000_000);
             Console.WriteLine(sw.Elapsed);
 
             //race condition:
