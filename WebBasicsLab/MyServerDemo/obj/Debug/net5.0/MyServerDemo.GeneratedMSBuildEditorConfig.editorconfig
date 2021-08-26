@@ -6,3 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
+build_property.RootNamespace = MyServerDemo
+build_property.ProjectDir = C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\WebBasicsLab\MyServerDemo\
