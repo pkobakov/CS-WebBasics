@@ -18,6 +18,7 @@
             server.AddRoute("/favicon.ico", Favicon);
             server.AddRoute("/About", About);
             server.AddRoute("/Users/Login", Login);
+            server.AddRoute("/Users/Register", Register);
 
             await server.StartAsync(80);
         }
@@ -54,6 +55,16 @@
             var response = new HttpResponse("text/plain", responseBodyBytes);
             return response;
 
+        }
+
+        static HttpResponse Register(HttpRequest request) 
+        {
+            var responseHtml = "Register page";
+            var responseBodyBytes = Encoding.UTF8.GetBytes(responseHtml);
+            var response = new HttpResponse("text/plain", responseBodyBytes);
+            return response;
+
+            return response;
         }
 
     }
