@@ -1,0 +1,30 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace SUS.HTTP
+{
+    public class Cookie
+    {
+        public Cookie(string name, string value)
+        {
+            this.Name = name;
+            this.Value = value;
+        }
+        public Cookie( string cookie)
+        {
+            var cookieParts = cookie.Split('=', 2);
+            this.Name = cookieParts[0];
+            this.Value = cookieParts[1];
+        }
+        public string Name { get; set; }
+        public string Value { get; set; }
+
+        public override string ToString()
+        {
+            return $"{this.Name}={this.Value}";
+        }
+    }
+}
