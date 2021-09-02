@@ -7,14 +7,27 @@
   "targets": {
     ".NETCoreApp,Version=v5.0": {
       "SUS.MvcFramework/1.0.0": {
+        "dependencies": {
+          "SUS.HTTP": "1.0.0"
+        },
         "runtime": {
           "SUS.MvcFramework.dll": {}
+        }
+      },
+      "SUS.HTTP/1.0.0": {
+        "runtime": {
+          "SUS.HTTP.dll": {}
         }
       }
     }
   },
   "libraries": {
     "SUS.MvcFramework/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SUS.HTTP/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

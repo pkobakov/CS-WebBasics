@@ -17,3 +17,11 @@ C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\obj
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\obj\Debug\net5.0\ref\MyFirstMvcApp.dll
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.pdb
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\obj\Debug\net5.0\MyFirstMvcApp.genruntimeconfig.cache
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.MvcFramework.dll
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\SUS.MvcFramework.pdb
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Users\Register.html
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Cards\Add.html
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Cards\All.html
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Cards\Collection.html
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Home\Index.html
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Users\Login.html

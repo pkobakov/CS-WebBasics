@@ -10,3 +10,6 @@ C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework\obj\D
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.dll
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework\obj\Debug\net5.0\ref\SUS.MvcFramework.dll
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.pdb
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework\bin\Debug\net5.0\SUS.HTTP.dll
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework\bin\Debug\net5.0\SUS.HTTP.pdb
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework\obj\Debug\net5.0\SUS.MvcFramework.csproj.CopyComplete

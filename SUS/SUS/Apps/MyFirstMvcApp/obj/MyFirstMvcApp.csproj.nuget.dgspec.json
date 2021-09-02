@@ -142,7 +142,11 @@
         "frameworks": {
           "net5.0": {
             "targetAlias": "net5.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj": {
+                "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

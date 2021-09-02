@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net5.0": {}
+    "net5.0": {
+      "SUS.HTTP/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v5.0",
+        "compile": {
+          "bin/placeholder/SUS.HTTP.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/SUS.HTTP.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "SUS.HTTP/1.0.0": {
+      "type": "project",
+      "path": "../SUS.HTTP/SUS.HTTP.csproj",
+      "msbuildProject": "../SUS.HTTP/SUS.HTTP.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "SUS.HTTP >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Petar Kobakov\\.nuget\\packages\\": {}
@@ -33,7 +52,11 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj": {
+              "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj"
+            }
+          }
         }
       },
       "warningProperties": {
