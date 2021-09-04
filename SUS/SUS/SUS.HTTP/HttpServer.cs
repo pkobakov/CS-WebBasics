@@ -65,7 +65,8 @@
                     Console.WriteLine($"{request.Method} {request.Path} => {request.Heathers.Count}" );
 
                     HttpResponse response;
-                    var route = this.routeTable.FirstOrDefault(r => r.Path == request.Path);
+                    var route = this.routeTable.FirstOrDefault(r => string.Compare(r.Path,request.Path) == 0 
+                                                                               && r.Method == request.Method);
 
                     if (route != null)
                     {
@@ -85,6 +86,7 @@
                         HttpOnly = true,
                         MaxAge = 60 * 24 * 60 * 60
                     });
+
                     var responseHeadersBytes = Encoding.UTF8.GetBytes(response.ToString());
 
                     await stream.WriteAsync(responseHeadersBytes, 0, responseHeadersBytes.Length);
