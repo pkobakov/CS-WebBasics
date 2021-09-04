@@ -44,12 +44,12 @@ namespace HTTPClientDemo
                 Console.WriteLine(requestString);
 
                 var sid = Guid.NewGuid().ToString();
-                var match = Regex.Match(requestString, @"sid=[^\n]*\r\n");
+                var match = Regex.Match(requestString, @"sessionId=[^\n]*\r\n");
                
 
                 if (match.Success)
                 {
-                    sid = match.Value.Substring(4);
+                    sid = match.Value.Substring(10);
                 }
 
 
@@ -71,7 +71,7 @@ namespace HTTPClientDemo
                 string response = "HTTP/1.1 200 OK" + Newline +
                     "Server: PepiServer 2021" + Newline +
                    //"Location: https://www.aninamontanari.com" + Newline +
-                   $"Set-Cookie: sid={sid}; Path= /; HttpOnly; Expires=" + DateTime.UtcNow.AddHours(3).ToString("R") + Newline +
+                   $"Set-Cookie: sessionId={sid}; Path= /; HttpOnly; Expires=" + DateTime.UtcNow.AddHours(3).ToString("R") + Newline +
                     "Content-Type: text/html; charset= utf-8" + Newline +
                     "Content-Length:" + html + Newline +
                     Newline + html + Newline;

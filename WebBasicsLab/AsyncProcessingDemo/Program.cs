@@ -121,6 +121,8 @@ namespace PrimeNumbersCounter
 
                }
            });
+
+            Console.WriteLine(Count);
         }
     }
 }
