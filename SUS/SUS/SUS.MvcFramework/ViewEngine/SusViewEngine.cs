@@ -22,7 +22,24 @@
         }
         private string GenerateCSharpCodeFromTemplate(string templateCode, object viewModel)
         {
-            string typeOfModel = viewModel == null? "object" : viewModel.GetType().FullName;
+            string typeOfModel = "object";
+
+            if (viewModel != null)
+            {
+                if (viewModel.GetType().IsGenericType)
+                {
+                    var modelName = viewModel.GetType().FullName;
+                    var genericArguments = viewModel.GetType().GenericTypeArguments;
+                    typeOfModel = modelName.Substring(0, modelName.IndexOf('`'))
+                        + "<" + string.Join(",", genericArguments.Select(x => x.FullName)) + ">";
+                }
+
+                else
+                {
+                    typeOfModel = viewModel.GetType().FullName;
+                }
+            }
+
             string csharpCode = @"
 using System;
 using System.Text;
@@ -155,9 +172,7 @@ namespace ViewNamespace
             
                     return new ErrorView (new List<string> { ex.ToString() }, csharpCode );
                 }
-            }
-
-        
+            }        
         }
     }
 }
