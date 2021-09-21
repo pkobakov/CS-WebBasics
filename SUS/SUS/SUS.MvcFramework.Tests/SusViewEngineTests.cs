@@ -25,18 +25,11 @@
 
             IViewEngine viewEngine = new SusViewEngine();
             var view = File.ReadAllText($"ViewTests/{fileName}.html");
-            var result = viewEngine.GetHtml(view, viewModel);
+            var actual = viewEngine.GetHtml(view, viewModel);
             var expectedResult = File.ReadAllText($"ViewTests/{fileName}.Result.html");
-            Assert.Equal(expectedResult, result);
+            Assert.Equal(expectedResult, actual);
         }
 
-    }
-    public class TestViewModel
-    {
-
-        public string Name { get; set; }
-        public DateTime DateOfBirth { get; set; }
-        public decimal Price { get; set; }
     }
          
 }

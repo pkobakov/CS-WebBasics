@@ -24,6 +24,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="SusViewEngineTests.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="ViewTests\CleanHtml.html">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

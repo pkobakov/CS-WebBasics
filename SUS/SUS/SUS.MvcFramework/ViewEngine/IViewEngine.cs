@@ -8,6 +8,6 @@ namespace SUS.MvcFramework.ViewEngine
 {
    public interface IViewEngine
     {
-        string GetHtml(string templateCode, object ViewModel);
+        string GetHtml(string templateCode, object viewModel);
     }
 }
