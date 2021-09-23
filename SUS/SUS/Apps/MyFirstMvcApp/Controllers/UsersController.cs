@@ -15,6 +15,7 @@
 
         }
 
+        [HttpPost]
         public HttpResponse DoLogin(HttpRequest request)
         {
             return this.Redirect("/");
