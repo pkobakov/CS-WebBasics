@@ -8,7 +8,7 @@
     {
       
 
-        public HttpResponse Login(HttpRequest request)
+        public HttpResponse Login()
         {
 
             return this.View();
@@ -16,13 +16,13 @@
         }
 
         [HttpPost]
-        public HttpResponse DoLogin(HttpRequest request)
+        public HttpResponse DoLogin()
         {
             return this.Redirect("/");
 
         }
 
-        public HttpResponse Register(HttpRequest request)
+        public HttpResponse Register()
         {
 
             return this.View();

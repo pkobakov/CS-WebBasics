@@ -60,3 +60,4 @@ C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Home\About.cshtml
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\wwwroot\img\dog.jpg
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\Apps\MyFirstMvcApp\bin\Debug\net5.0\Views\Cards\DoAdd.cshtml
