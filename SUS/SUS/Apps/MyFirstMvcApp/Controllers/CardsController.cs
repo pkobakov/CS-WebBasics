@@ -1,24 +1,37 @@
-﻿using MyFirstMvcApp.ViewModels;
-using SUS.HTTP;
-using SUS.MvcFramework;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MyFirstMvcApp.Controllers
+﻿namespace BattleCards.Controllers
 {
+    using BattleCards.Data;
+    using BattleCards.ViewModels;
+    using SUS.HTTP;
+    using SUS.MvcFramework;
+    using System.Linq;
+
     public class CardsController : Controller
     {
+
         public HttpResponse Add()
         {
             return this.View();
         }
         public HttpResponse All()
         {
-            return this.View();
+            var data = new ApplicationDbContext();
+            var cardViewModel = data.Cards.Select(x => new CardViewModel 
+            { 
+            
+            Name = x.Name,
+            ImageUrl = x.ImageUrl,
+            Health = x.Health,
+            Attack = x.Attack, 
+            Type = x.Keyword,
+            Description = x.Description
+        
+            }).ToList();
+        
+            return View(new AllCardsViewModel { AllCards = cardViewModel });
+        
         }
+
         public HttpResponse Collection()
         {
             return this.View();
@@ -27,13 +40,22 @@ namespace MyFirstMvcApp.Controllers
         [HttpPost("/Cards/Add")]
         public HttpResponse DoAdd() 
         {
-            var viewModel = new AddCardViewModel
+
+
+            var data = new ApplicationDbContext();
+           data.Cards.Add ( new Card
             {
                 Attack = int.Parse(this.Request.FormData["attack"]),
                 Health = int.Parse(this.Request.FormData["health"]),
-            
-            };
-            return View(viewModel);
+                Description = this.Request.FormData["description"],
+                Name = this.Request.FormData["name"],
+                ImageUrl = this.Request.FormData["image"],
+                Keyword = this.Request.FormData["keyword"]
+           });
+
+            data.SaveChanges();
+
+            return this.Redirect("/");
         }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace MyFirstMvcApp.Controllers
+﻿namespace BattleCards.Controllers
 {
-    using MyFirstMvcApp.ViewModels;
+    using BattleCards.ViewModels;
     using SUS.HTTP;
     using SUS.MvcFramework;
     using System;
