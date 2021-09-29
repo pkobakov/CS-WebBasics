@@ -5,6 +5,7 @@ C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\xunit.runner.visualstudio.dotnetcore.testadapter.dll
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\xunit.runner.reporters.netcoreapp10.dll
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\xunit.runner.utility.netcoreapp10.dll
+C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\SusViewEngineTests.cs
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\ViewTests\CleanHtml.html
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\ViewTests\CleanHtml.Result.html
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\ViewTests\Foreach.html
@@ -139,4 +140,3 @@ C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\obj\Debug\net5.0\ref\SUS.MvcFramework.Tests.dll
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\obj\Debug\net5.0\SUS.MvcFramework.Tests.pdb
 C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\obj\Debug\net5.0\SUS.MvcFramework.Tests.genruntimeconfig.cache
-C:\Users\Petar Kobakov\Desktop\C# Web\CSWebBasics\SUS\SUS\SUS.MvcFramework.Tests\bin\Debug\net5.0\SusViewEngineTests.cs

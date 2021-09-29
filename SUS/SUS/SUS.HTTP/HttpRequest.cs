@@ -3,15 +3,20 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Net;
     using System.Text;
     using static HttpConstans;
     public class HttpRequest
     {
+        public static IDictionary<string, Dictionary<string, string>> Sessions =
+            new Dictionary<string, Dictionary<string, string>>();
         public HttpRequest(string requestString)
         {
             var lines = requestString.Split(new string[] { NewLine }, System.StringSplitOptions.None);
             this.Heathers = new List<Header>();
             this.Cookies = new List<Cookie>();
+            this.FormData = new Dictionary<string, string>();
+            
 
             //GET /somepage HTTP/1.1
             var headerline = lines[0];
@@ -56,7 +61,34 @@
                     this.Cookies.Add(new Cookie(cookie));
                 }
             }
+
+            var sessionCookie = this.Cookies.FirstOrDefault(x => x.Name == SessionName);
+            if (sessionCookie == null || !Sessions.ContainsKey(sessionCookie.Value))
+            {
+                var sessionId = Guid.NewGuid().ToString();
+                this.Session = new Dictionary<string, string>();
+                Sessions.Add(sessionId, this.Session);
+                this.Cookies.Add(new Cookie(SessionName, sessionId));
+            }
+
+            else
+            {
+                this.Session = Sessions[sessionCookie.Value];
+            }    
+            
             this.Body = bodyBuilder.ToString();
+            var parameters = this.Body.Split(new char[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (var parameter in parameters)
+            {
+                var paramParts = parameter.Split('=');
+                var name = paramParts[0];
+                var value =WebUtility.UrlDecode(paramParts[1]);
+
+                if (!this.FormData.ContainsKey(name))
+                {
+                    this.FormData.Add(name, value);
+                }
+            }
         }
 
 
@@ -65,5 +97,8 @@
         public string Body { get; set; }
         public ICollection<Cookie> Cookies { get; set; }
         public ICollection<Header> Heathers { get; set; }
+        public IDictionary<string, string> FormData { get; set; }
+        public Dictionary<string, string> Session { get; set; }
+
     }
 }

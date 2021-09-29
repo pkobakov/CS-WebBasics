@@ -81,11 +81,14 @@
 
 
                     response.Headers.Add(new Header("Server", "SUS Server 1.0"));
-                    response.Cookies.Add(new ResponseCookie("sid", Guid.NewGuid().ToString())
+
+                    var sessionCookie = request.Cookies.FirstOrDefault(c => c.Name == SessionName);
+                    if (sessionCookie != null)
                     {
-                        HttpOnly = true,
-                        MaxAge = 60 * 24 * 60 * 60
-                    });
+                        var responseSessionCookie = new ResponseCookie(sessionCookie.Name, sessionCookie.Value);
+                        responseSessionCookie.Path = "/";
+                        response.Cookies.Add(responseSessionCookie);
+                    }
 
                     var responseHeadersBytes = Encoding.UTF8.GetBytes(response.ToString());
 

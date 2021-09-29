@@ -103,10 +103,10 @@ namespace ViewNamespace
                     {
                         var atSignLocation = line.IndexOf("@");
                         var htmlBeforeAtSign = line.Substring(0, atSignLocation);
-                        csharpCode.Append(htmlBeforeAtSign + "\" + ");
+                        csharpCode.Append(htmlBeforeAtSign.Replace("\"", "\"\"") + "\" + ");
                         var lineAfterAtSign = line.Substring(atSignLocation + 1);
                         var code = csharpCodeRegex.Match(lineAfterAtSign).Value;
-                        csharpCode.Append(code + "+\"");
+                        csharpCode.Append(code + "+ @\"");
                         line = lineAfterAtSign.Substring(code.Length);
                         //csharpCode
                     }
