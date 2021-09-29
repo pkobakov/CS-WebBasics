@@ -28,7 +28,7 @@
         
             }).ToList();
         
-            return View(new AllCardsViewModel { AllCards = cardViewModel });
+            return View(new AllCardsViewModel{AllCards= cardViewModel});
         
         }
 
@@ -42,7 +42,14 @@
         {
 
 
-            var data = new ApplicationDbContext();
+           var data = new ApplicationDbContext();
+
+            //validation:
+            
+            if (Request.FormData["name"].Length<5)
+            {
+                return this.Error("Name should be at least 5 characters long.");
+            }
            data.Cards.Add ( new Card
             {
                 Attack = int.Parse(this.Request.FormData["attack"]),
