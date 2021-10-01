@@ -11,16 +11,19 @@
         [HttpGet("/")]
         public HttpResponse Index ()
         {
-            var viewModel = new IndexViewModel();
-            viewModel.CurrentYear = DateTime.UtcNow.Year;
-            viewModel.Message = "Welcome to the Battle Cards";
-            return this.View(viewModel);
+            if (this.IsUserSignedIn())
+            {
+                return Redirect("/Cards/All");
+            }
+            return this.View();
 
         }
 
         public HttpResponse About()
         {
-            return View();
+
+            this.SignIn("pepi");
+            return this.View();
         }
     }
 }

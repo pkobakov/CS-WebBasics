@@ -2,11 +2,10 @@
 {
     using SUS.HTTP;
     using SUS.MvcFramework;
-    using System;
 
-    public class UsersController: Controller
+    public class UsersController : Controller
     {
-      
+
 
         public HttpResponse Login()
         {
@@ -15,7 +14,7 @@
 
         }
 
-        [HttpPost]
+        [HttpPost("/Users/Login")]
         public HttpResponse DoLogin()
         {
             return this.Redirect("/");
@@ -27,6 +26,27 @@
 
             return this.View();
         }
+
+        [HttpPost("/Users/Register")]
+        public HttpResponse DoRegister ()
+        {
+            return Redirect("/");
+        }
+
+        public HttpResponse Logout() 
+        {
+            if (!this.IsUserSignedIn())
+            {
+                return this.Error("Only logged in users can logout");
+
+            }
+
+            this.SignOut();
+            return this.Redirect("/");
+
+        }
+
+
 
     }
 }

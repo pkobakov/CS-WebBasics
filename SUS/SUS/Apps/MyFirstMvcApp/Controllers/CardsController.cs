@@ -28,7 +28,7 @@
         
             }).ToList();
         
-            return View(new AllCardsViewModel{AllCards= cardViewModel});
+            return View(cardViewModel);
         
         }
 
