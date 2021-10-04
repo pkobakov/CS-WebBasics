@@ -1,9 +1,7 @@
 ﻿namespace BattleCards.Controllers
 {
-    using BattleCards.ViewModels;
     using SUS.HTTP;
     using SUS.MvcFramework;
-    using System;
 
 
     public class HomeController:Controller
@@ -19,11 +17,6 @@
 
         }
 
-        public HttpResponse About()
-        {
-
-            this.SignIn("pepi");
-            return this.View();
-        }
+  
     }
 }

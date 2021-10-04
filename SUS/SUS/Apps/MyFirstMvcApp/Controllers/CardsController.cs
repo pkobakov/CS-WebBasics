@@ -8,6 +8,12 @@
 
     public class CardsController : Controller
     {
+        private readonly ApplicationDbContext db;
+
+        public CardsController(ApplicationDbContext db)
+        {
+            this.db = db;
+        }
 
         public HttpResponse Add()
         {
@@ -15,6 +21,11 @@
         }
         public HttpResponse All()
         {
+            if (!this.IsUserSignedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
             var data = new ApplicationDbContext();
             var cardViewModel = data.Cards.Select(x => new CardViewModel 
             { 
@@ -34,15 +45,20 @@
 
         public HttpResponse Collection()
         {
+            if (!this.IsUserSignedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
             return this.View();
         }
 
         [HttpPost("/Cards/Add")]
         public HttpResponse DoAdd() 
         {
-
-
-           var data = new ApplicationDbContext();
+            if (!this.IsUserSignedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
 
             //validation:
             
@@ -50,7 +66,7 @@
             {
                 return this.Error("Name should be at least 5 characters long.");
             }
-           data.Cards.Add ( new Card
+           db.Cards.Add ( new Card
             {
                 Attack = int.Parse(this.Request.FormData["attack"]),
                 Health = int.Parse(this.Request.FormData["health"]),
@@ -60,9 +76,9 @@
                 Keyword = this.Request.FormData["keyword"]
            });
 
-            data.SaveChanges();
+            db.SaveChanges();
 
-            return this.Redirect("/");
+            return this.Redirect("/Cards/All");
         }
     }
 }

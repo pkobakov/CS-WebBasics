@@ -8,11 +8,11 @@
 
     public class UsersController : Controller
     {
-        private UserService userService;
+        private IUserService usersService;
 
-        public UsersController()
+        public UsersController(IUserService usersService)
         {
-            this.userService = new UserService();
+            this.usersService = usersService;
         }
 
 
@@ -26,9 +26,10 @@
         [HttpPost("/Users/Login")]
         public HttpResponse DoLogin()
         {
+
             var username = this.Request.FormData["username"];
             var password = this.Request.FormData["password"];
-            var userId = this.userService.GetUserId(username, password);
+            var userId = this.usersService.GetUserId(username, password);
             if (userId == null)
             {
                 return this.Error("Invalid username or password");
@@ -41,6 +42,10 @@
 
         public HttpResponse Register()
         {
+            if (this.IsUserSignedIn())
+            {
+                return Redirect("/");
+            }
 
             return this.View();
         }
@@ -48,6 +53,11 @@
         [HttpPost("/Users/Register")]
         public HttpResponse DoRegister()
         {
+            if (this.IsUserSignedIn())
+            {
+                return Redirect("/");
+            }
+
             var username = this.Request.FormData["username"];
             var email = this.Request.FormData["email"];
             var password = this.Request.FormData["password"];
@@ -65,7 +75,7 @@
                 return this.Error("Invalid username format.");
             }
 
-            if (!userService.IsUsernameAvailable(username))
+            if (!usersService.IsUsernameAvailable(username))
             {
                 return this.Error("This username is already taken");
             }
@@ -75,7 +85,7 @@
                 return this.Error("Invalid email");
             }
 
-            if (!userService.IsEmailAvailable(email))
+            if (!usersService.IsEmailAvailable(email))
             {
                 return this.Error("Email is already taken");
             }
@@ -90,7 +100,7 @@
                 return this.Error("Password and confirmPassword should match");
             }
 
-            this.userService.CreateUser(username, email, password);
+            this.usersService.CreateUser(username, email, password);
             return Redirect("/Users/Login");
         }
 
