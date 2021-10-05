@@ -6,27 +6,29 @@
     using System.Collections.Generic;
     using System.IO;
     using System.Linq;
+    using System.Reflection;
     using System.Threading.Tasks;
 
     public static class Host
     {
-        public static async Task CreateHostAsync(IMvcApplication mvcApplication, int port = 80) 
+        public static async Task CreateHostAsync(IMvcApplication application, int port = 80) 
         {
             List<Route> routeTable = new List<Route>();
+            IServiceCollection serviceCollection = new ServiceCollection();
 
             AutoRegisterStaticFiles(routeTable);
-            AutoRegisterRoutes(routeTable, mvcApplication);
+            AutoRegisterRoutes(routeTable, application, serviceCollection);
             
-            mvcApplication.ConfigureServices();
-            mvcApplication.Configure(routeTable);
+            application.ConfigureServices(serviceCollection);
+            application.Configure(routeTable);
             var server = new HttpServer(routeTable);
             await server.StartAsync(port);
 
         }
 
-        private static void AutoRegisterRoutes(List<Route> routeTable, IMvcApplication mvcApplication)
+        private static void AutoRegisterRoutes(List<Route> routeTable, IMvcApplication application, IServiceCollection serviceCollection)
         {
-           var controllerTypes =  mvcApplication
+           var controllerTypes =  application
                                  .GetType()
                                  .Assembly
                                  .GetTypes()
@@ -68,16 +70,46 @@
                         url = attribute.Url;
                     }
 
-                    routeTable.Add(new Route(url, httpMethod, (request) =>
-                   {
-                       var instance = Activator.CreateInstance(controller) as Controller;
-                       instance.Request = request;
-                       var response = method.Invoke(instance, new object[] {}) as HttpResponse;
-
-                       return response;
-                   }));
+                    routeTable.Add(new Route(url, httpMethod, request=>ExecuteAction(request, controller, method, serviceCollection)));
                 }
             }
+        }
+
+        private static HttpResponse ExecuteAction(HttpRequest request, Type controller, MethodInfo action, IServiceCollection serviceCollection)
+        {
+
+                var instance = serviceCollection.CreateInstance(controller) as Controller;
+                instance.Request = request;
+                var arguments = new List<object>();
+
+                var parameters = action.GetParameters();
+
+                foreach (var parameter in parameters)
+                {
+                    var parameterValue = GetParameterFromRequest(request, parameter.Name);
+                    arguments.Add(parameterValue);
+
+                }
+
+                var response = action.Invoke(instance, arguments.ToArray() ) as HttpResponse;
+
+                return response;
+
+            
+        }
+
+        private static string GetParameterFromRequest(HttpRequest request, string parameter) 
+        {
+
+            if (request.FormData.ContainsKey(parameter)) 
+            {
+                return request.FormData[parameter];
+            
+            }
+
+            return null;
+        
+        
         }
 
         private static void AutoRegisterStaticFiles(List<Route> routeTable) 

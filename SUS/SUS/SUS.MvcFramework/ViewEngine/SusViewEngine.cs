@@ -13,11 +13,11 @@
 
     public class SusViewEngine : IViewEngine
     {
-        public string GetHtml(string templateCode, object viewModel)
+        public string GetHtml(string templateCode, object viewModel, string user)
         {
             string csharpCode = GenerateCSharpCodeFromTemplate(templateCode, viewModel);
             IView executableObject = GenerateExecutableCode(csharpCode, viewModel);
-            string html = executableObject.ExecuteTemplate(viewModel);
+            string html = executableObject.ExecuteTemplate(viewModel, user);
             return html;
         }
         private string GenerateCSharpCodeFromTemplate(string templateCode, object viewModel)
@@ -51,8 +51,9 @@ namespace ViewNamespace
 {
    public class ViewClass : IView
    {
-       public string ExecuteTemplate(object viewModel)
+       public string ExecuteTemplate(object viewModel, string user)
        {
+        var User = user;
         var Model = viewModel as " + typeOfModel + @";
         var html = new StringBuilder();
 
@@ -127,6 +128,16 @@ namespace ViewNamespace
 
                                                   if (viewModel != null)
                                                   {
+                                                      if (viewModel.GetType().IsGenericType)
+                                                      {
+                                                      var genericArgs = viewModel.GetType().GetGenericArguments();
+                                                        foreach (var genericArg in genericArgs)
+                                                        {
+                                                          compileResult = compileResult
+                                                                     .AddReferences(MetadataReference.CreateFromFile(genericArg.Assembly.Location));
+                                                        }
+                                                      }
+                
                                                       compileResult = compileResult
                                                                       .AddReferences(MetadataReference.CreateFromFile(viewModel.GetType().Assembly.Location));
                                                   }
