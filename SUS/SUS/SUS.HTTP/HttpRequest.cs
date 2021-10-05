@@ -16,7 +16,7 @@
             this.Heathers = new List<Header>();
             this.Cookies = new List<Cookie>();
             this.FormData = new Dictionary<string, string>();
-            
+
 
             //GET /somepage HTTP/1.1
             var headerline = lines[0];
@@ -51,7 +51,7 @@
                 }
             }
 
-            if (this.Heathers.Any(h=>h.Name == RequestCookieHeather))
+            if (this.Heathers.Any(h => h.Name == RequestCookieHeather))
             {
                 var cookieAsString = this.Heathers.FirstOrDefault(h => h.Name == RequestCookieHeather).Value;
                 var cookies = cookieAsString.Split(new string[] { "; " }, StringSplitOptions.RemoveEmptyEntries);
@@ -63,7 +63,7 @@
             }
 
             var sessionCookie = this.Cookies.FirstOrDefault(x => x.Name == SessionName);
-            if (sessionCookie == null || !Sessions.ContainsKey(sessionCookie.Value))
+            if (sessionCookie == null)
             {
                 var sessionId = Guid.NewGuid().ToString();
                 this.Session = new Dictionary<string, string>();
@@ -71,18 +71,42 @@
                 this.Cookies.Add(new Cookie(SessionName, sessionId));
             }
 
+            else if (!Sessions.ContainsKey(sessionCookie.Value))
+            {
+
+                this.Session = new Dictionary<string, string>();
+                Sessions.Add(sessionCookie.Value, this.Session);
+            }
+
             else
             {
                 this.Session = Sessions[sessionCookie.Value];
-            }    
-            
-            this.Body = bodyBuilder.ToString();
+            }
+
+            if (Path.Contains("?"))
+            {
+                var pathParts = Path.Split(new char[] { '?' }, 2);
+                this.Path = pathParts[0];
+                this.QueryString = pathParts[1];
+            }
+
+            else
+            {
+                this.QueryString = string.Empty;
+            }
+
+            this.Body = bodyBuilder.ToString().TrimEnd('\n', '\r');
+            SplitParameters();
+        }
+
+        private void SplitParameters()
+        {
             var parameters = this.Body.Split(new char[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var parameter in parameters)
             {
-                var paramParts = parameter.Split('=');
+                var paramParts = parameter.Split(new char[] { '=' }, 2);
                 var name = paramParts[0];
-                var value =WebUtility.UrlDecode(paramParts[1]);
+                var value = WebUtility.UrlDecode(paramParts[1]);
 
                 if (!this.FormData.ContainsKey(name))
                 {
@@ -91,8 +115,8 @@
             }
         }
 
-
         public string Path { get; set; }
+        public string QueryString { get; set; }
         public HttpMethod Method  { get; set; }
         public string Body { get; set; }
         public ICollection<Cookie> Cookies { get; set; }
