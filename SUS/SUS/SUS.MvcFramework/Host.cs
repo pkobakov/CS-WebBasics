@@ -86,7 +86,25 @@
 
                 foreach (var parameter in parameters)
                 {
-                    var parameterValue = GetParameterFromRequest(request, parameter.Name);
+                    var httpParameterValue = GetParameterFromRequest(request, parameter.Name);
+                    var parameterValue = Convert.ChangeType(httpParameterValue, parameter.ParameterType);
+
+                    if (parameterValue == null && parameter.ParameterType != typeof(string))
+                    {
+                       parameterValue = Activator.CreateInstance(parameter.ParameterType);
+                       var properties = parameter.ParameterType.GetProperties();
+
+                          foreach (var property in properties)
+                          {
+                            var propertyHttpParameterValue = GetParameterFromRequest(request, property.Name);
+                            var propertyParameterValue = Convert.ChangeType(propertyHttpParameterValue, property.PropertyType);
+                            property.SetValue(parameterValue, propertyParameterValue);
+
+                          }
+
+
+                    }
+
                     arguments.Add(parameterValue);
 
                 }
@@ -100,11 +118,20 @@
 
         private static string GetParameterFromRequest(HttpRequest request, string parameter) 
         {
+            parameter = parameter.ToLower();
 
-            if (request.FormData.ContainsKey(parameter)) 
+            if (request.FormData.Any(x=>x.Key.ToLower() == parameter)) 
             {
-                return request.FormData[parameter];
+                return request.FormData
+                              .FirstOrDefault(x=>x.Key.ToLower() == parameter).Value;
             
+            }
+
+            if (request.QueryData.Any(x => x.Key.ToLower() == parameter))
+            {
+                return request.QueryData
+                              .FirstOrDefault(x => x.Key.ToLower() == parameter).Value;
+
             }
 
             return null;

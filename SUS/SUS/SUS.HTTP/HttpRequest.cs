@@ -16,6 +16,7 @@
             this.Heathers = new List<Header>();
             this.Cookies = new List<Cookie>();
             this.FormData = new Dictionary<string, string>();
+            this.QueryData = new Dictionary<string, string>();
 
 
             //GET /somepage HTTP/1.1
@@ -96,21 +97,22 @@
             }
 
             this.Body = bodyBuilder.ToString().TrimEnd('\n', '\r');
-            SplitParameters();
+            SplitParameters(this.Body, this.FormData);
+            SplitParameters(this.QueryString, this.QueryData);
         }
 
-        private void SplitParameters()
+        private static void SplitParameters(string parametersAsString, IDictionary<string, string> output)
         {
-            var parameters = this.Body.Split(new char[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
+            var parameters = parametersAsString.Split(new char[] { '&' }, StringSplitOptions.RemoveEmptyEntries);
             foreach (var parameter in parameters)
             {
                 var paramParts = parameter.Split(new char[] { '=' }, 2);
                 var name = paramParts[0];
                 var value = WebUtility.UrlDecode(paramParts[1]);
 
-                if (!this.FormData.ContainsKey(name))
+                if (!output.ContainsKey(name))
                 {
-                    this.FormData.Add(name, value);
+                    output.Add(name, value);
                 }
             }
         }
@@ -122,6 +124,7 @@
         public ICollection<Cookie> Cookies { get; set; }
         public ICollection<Header> Heathers { get; set; }
         public IDictionary<string, string> FormData { get; set; }
+        public IDictionary<string, string> QueryData { get; set; }
         public Dictionary<string, string> Session { get; set; }
 
     }
