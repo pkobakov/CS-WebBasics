@@ -8,9 +8,9 @@
 
     public class UsersController : Controller
     {
-        private IUserService usersService;
+        private UserService usersService;
 
-        public UsersController(IUserService usersService)
+        public UsersController(UserService usersService)
         {
             this.usersService = usersService;
         }
@@ -23,11 +23,9 @@
 
         }
 
-        [HttpPost("/Users/Login")]
-        public HttpResponse DoLogin(string username, string password)
+        [HttpPost]
+        public HttpResponse Login(string username, string password)
         {
-
-
             var userId = this.usersService.GetUserId(username, password);
             if (userId == null)
             {
@@ -35,6 +33,7 @@
             }
 
             this.SignIn(userId);
+
             return this.Redirect("/");
 
         }
@@ -49,8 +48,8 @@
             return this.View();
         }
 
-        [HttpPost("/Users/Register")]
-        public HttpResponse DoRegister(string username, string email, string password, string confirmPassword)
+        [HttpPost]
+        public HttpResponse Register(string username, string email, string password, string confirmPassword)
         {
             if (this.IsUserSignedIn())
             {

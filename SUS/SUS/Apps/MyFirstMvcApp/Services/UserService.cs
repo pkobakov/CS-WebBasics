@@ -9,11 +9,11 @@
 
     public class UserService : IUserService
     {
-        private ApplicationDbContext data;
+        private ApplicationDbContext db;
 
-        public UserService()
+        public UserService(ApplicationDbContext db)
         {
-            this.data = new ApplicationDbContext();
+            this.db = db;
         }
         public string CreateUser(string username, string email, string password)
         {
@@ -27,25 +27,25 @@
             
             };
 
-            this.data.Users.Add(user);
-            this.data.SaveChanges();
+            this.db.Users.Add(user);
+            this.db.SaveChanges();
 
             return user.Id;
         }
 
         public bool IsEmailAvailable(string email)
         {
-           return !this.data.Users.Any(u => u.Email == email);
+           return !this.db.Users.Any(u => u.Email == email);
         }
 
         public bool IsUsernameAvailable(string username)
         {
-            return !this.data.Users.Any(u=>u.Username == username);
+            return !this.db.Users.Any(u=>u.Username == username);
         }
 
         public string GetUserId(string username, string password)
         {
-            var user = this.data.Users.FirstOrDefault(u => u.Username == username);
+            var user = this.db.Users.FirstOrDefault(u => u.Username == username);
 
             if (user.Password != HashPassword(password))
             {

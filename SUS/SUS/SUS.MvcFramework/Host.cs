@@ -16,11 +16,22 @@
             List<Route> routeTable = new List<Route>();
             IServiceCollection serviceCollection = new ServiceCollection();
 
-            AutoRegisterStaticFiles(routeTable);
-            AutoRegisterRoutes(routeTable, application, serviceCollection);
-            
             application.ConfigureServices(serviceCollection);
             application.Configure(routeTable);
+
+            AutoRegisterStaticFiles(routeTable);
+            AutoRegisterRoutes(routeTable, application, serviceCollection);
+
+            Console.WriteLine("Registered routes:");
+
+            foreach (var route in routeTable)
+            {
+                Console.WriteLine($"{route.Method} {route.Path}");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("Requests:");
+
             var server = new HttpServer(routeTable);
             await server.StartAsync(port);
 
