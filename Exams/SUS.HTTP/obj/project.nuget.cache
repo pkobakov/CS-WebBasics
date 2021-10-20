@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "0zl5JPqZzE+Dn8UcFzz6ZLb7UImJY0YQ98Q9cgQjOph4rW4+1AYChQspUlvIQkD76anDhCeb+/LsBEzIp74j8A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Petar Kobakov\\Desktop\\GIT_Exam\\GIT\\SUS.HTTP\\SUS.HTTP.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Petar Kobakov\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\Petar Kobakov\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

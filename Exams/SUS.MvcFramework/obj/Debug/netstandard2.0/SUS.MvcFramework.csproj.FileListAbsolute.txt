@@ -1,0 +1,13 @@
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\bin\Debug\netstandard2.0\SUS.MvcFramework.deps.json
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\bin\Debug\netstandard2.0\SUS.MvcFramework.dll
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\bin\Debug\netstandard2.0\SUS.MvcFramework.pdb
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\bin\Debug\netstandard2.0\SUS.HTTP.dll
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\bin\Debug\netstandard2.0\SUS.HTTP.pdb
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.csproj.AssemblyReference.cache
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.AssemblyInfoInputs.cache
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.AssemblyInfo.cs
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.csproj.CoreCompileInputs.cache
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.csproj.CopyComplete
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.dll
+C:\Users\Petar Kobakov\Desktop\GIT_Exam\GIT\SUS.MvcFramework\obj\Debug\netstandard2.0\SUS.MvcFramework.pdb
