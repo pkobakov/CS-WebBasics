@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\Andreys\\Andreys.csproj": {}
+    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\Apps\\Andreys\\Andreys.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\Andreys\\Andreys.csproj": {
+    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\Apps\\Andreys\\Andreys.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\Andreys\\Andreys.csproj",
+        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\Apps\\Andreys\\Andreys.csproj",
         "projectName": "Andreys",
-        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\Andreys\\Andreys.csproj",
+        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\Apps\\Andreys\\Andreys.csproj",
         "packagesPath": "C:\\Users\\Petar Kobakov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\Andreys\\obj\\",
+        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\Apps\\Andreys\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Petar Kobakov\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -28,11 +28,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj": {
-                "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj"
+              "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\SUS.HTTP.csproj": {
+                "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\SUS.HTTP.csproj"
               },
-              "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.MvcFramework\\SUS.MvcFramework.csproj": {
-                "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.MvcFramework\\SUS.MvcFramework.csproj"
+              "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.MvcFramework\\SUS.MvcFramework.csproj": {
+                "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.MvcFramework\\SUS.MvcFramework.csproj"
               }
             }
           }
@@ -85,29 +85,29 @@
         }
       }
     },
-    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj": {
+    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\SUS.HTTP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj",
+        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\SUS.HTTP.csproj",
         "projectName": "SUS.HTTP",
-        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj",
+        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\SUS.HTTP.csproj",
         "packagesPath": "C:\\Users\\Petar Kobakov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\obj\\",
+        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Petar Kobakov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {}
           }
         },
@@ -118,8 +118,16 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
+          "dependencies": {
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -130,41 +138,36 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.MvcFramework\\SUS.MvcFramework.csproj": {
+    "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.MvcFramework\\SUS.MvcFramework.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.MvcFramework\\SUS.MvcFramework.csproj",
+        "projectUniqueName": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.MvcFramework\\SUS.MvcFramework.csproj",
         "projectName": "SUS.MvcFramework",
-        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.MvcFramework\\SUS.MvcFramework.csproj",
+        "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.MvcFramework\\SUS.MvcFramework.csproj",
         "packagesPath": "C:\\Users\\Petar Kobakov\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.MvcFramework\\obj\\",
+        "outputPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.MvcFramework\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Petar Kobakov\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net5.0"
+          "netstandard2.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
+          "netstandard2.0": {
+            "targetAlias": "netstandard2.0",
             "projectReferences": {
-              "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj": {
-                "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\SUS\\SUS\\SUS.HTTP\\SUS.HTTP.csproj"
+              "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\SUS.HTTP.csproj": {
+                "projectPath": "C:\\Users\\Petar Kobakov\\Desktop\\C# Web\\CSWebBasics\\Exams\\SUS.HTTP\\SUS.HTTP.csproj"
               }
             }
           }
@@ -176,12 +179,22 @@
         }
       },
       "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
+        "netstandard2.0": {
+          "targetAlias": "netstandard2.0",
           "dependencies": {
             "Microsoft.CodeAnalysis.CSharp": {
               "target": "Package",
-              "version": "[3.11.0, )"
+              "version": "[3.7.0, )"
+            },
+            "NETStandard.Library": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.0.3, )",
+              "autoReferenced": true
+            },
+            "System.ComponentModel.Annotations": {
+              "target": "Package",
+              "version": "[4.7.0, )"
             }
           },
           "imports": [
@@ -194,11 +207,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
           "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
         }
       }
