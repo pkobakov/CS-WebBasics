@@ -69,7 +69,7 @@
 
             this.SignIn(user.Id);
 
-            return this.Redirect("/");
+            return this.Redirect("/Home");
         
         }
 

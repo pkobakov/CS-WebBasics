@@ -27,7 +27,7 @@
         public Category Category { get; set; }
 
         [Required]
-        public Gender MyProperty { get; set; }
+        public Gender Gender { get; set; }
     }
 
 

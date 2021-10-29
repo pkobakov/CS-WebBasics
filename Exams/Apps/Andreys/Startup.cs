@@ -1,6 +1,7 @@
 ﻿namespace Andreys
 {
     using Andreys.Data;
+    using Andreys.Services.Products;
     using Andreys.Services.Users;
     using SUS.HTTP;
     using SUS.MvcFramework;
@@ -21,6 +22,7 @@
         public void ConfigureServices(IServiceCollection serviceCollection)
         {
             serviceCollection.Add<IUsersService, UsersService>();
+            serviceCollection.Add<IProductsService, ProductsService>();
         }
     }
 }
