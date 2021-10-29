@@ -59,5 +59,12 @@
             return this.Redirect("/Home");
         }
 
+        public HttpResponse Delete(int id) 
+        {
+
+            this.productsService.DeleteProduct(id);
+            return this.Redirect("/Home");
+        }
+
     }
 }

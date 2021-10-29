@@ -31,6 +31,13 @@ namespace Andreys.Services.Products
             this.data.SaveChanges();
         }
 
+        public void DeleteProduct(int id)
+        {
+            var product = GetProduct(id);
+            this.data.Remove(product);
+            this.data.SaveChanges();
+        }
+
         public IEnumerable<Product> GetAll()
         => this.data.Products.Select(p=> new Product
         { 
@@ -47,5 +54,9 @@ namespace Andreys.Services.Products
 
             return product;
         }
+
+
+
+
     }
 }

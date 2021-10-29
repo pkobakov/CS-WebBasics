@@ -12,7 +12,9 @@ namespace Andreys.Services.Products
     {
 
         void CreateProduct(AddProductModel model);
+        void DeleteProduct(int id);
         IEnumerable<Product> GetAll();
         Product GetProduct(int id);
+        
     }
 }
