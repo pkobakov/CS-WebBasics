@@ -17,6 +17,10 @@
 
         public HttpResponse Details(int id) 
         {
+            if (!IsUserSignedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
 
             var product = this.productsService.GetProduct(id);
 
@@ -35,11 +39,24 @@
         
         }
 
-        public HttpResponse Add() => this.View();
+        public HttpResponse Add() 
+        {
+
+            if (!IsUserSignedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
+
+            return this.View();
+        }
 
         [HttpPost]
         public HttpResponse Add(AddProductModel model) 
         {
+            if (model == null)
+            {
+                return this.Redirect("/Products/Add");
+            }
             if (string.IsNullOrWhiteSpace(model.Name) || model.Name.Length < 4 || model.Name.Length > 20)
             {
                 return this.Error("Product name should have between 4 and 20 characters.");

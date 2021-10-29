@@ -75,6 +75,10 @@
 
         public HttpResponse Logout() 
         {
+            if (!IsUserSignedIn())
+            {
+                return this.Redirect("/Users/Login");
+            }
 
             this.SignOut();
             return this.Redirect("/");
